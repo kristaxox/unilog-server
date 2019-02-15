@@ -1,0 +1,14 @@
+language: go
+
+# Force-enable Go modules. This will be unnecessary when Go 1.12 lands.
+env:
+  - GO111MODULE=on
+go:
+  - 1.11.x
+git:
+  depth: 1
+before_script:
+  - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
+script:
+  - golangci-lint run  
+  - go test -v -race ./...
