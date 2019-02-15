@@ -7,5 +7,4 @@ git:
 before_script:
   - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
 script:
-  - golangci-lint run  
   - go test -v -race ./...
