@@ -1,4 +1,4 @@
-FROM golang:1.11 as build-env
+FROM golang:1.13 as build-env
 
 COPY ./ /go/src/github.com/kristaxox/unilog
 WORKDIR /go/src/github.com/kristaxox/unilog
